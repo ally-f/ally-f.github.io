@@ -1,0 +1,129 @@
+body {
+    background-color: cornflowerblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow:scroll;
+}
+
+#header {
+    background-color: lavender;
+    margin:auto;
+    padding: 10px 0;
+    text-align: center;
+    font-family: "Consolas", "Courier New", monospace;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-bottom: 5px solid darkblue;
+
+}
+#header::after {
+    content: "";
+    clear: both;
+}
+
+#content {
+    background-color: lavender;
+    border: 15px double darkblue;
+    padding: 2em;
+    width: 80%;
+    margin: 1em auto;
+    position: relative
+
+    /*
+    margin: 4em auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    */
+}
+
+h1, h2, h3 {
+    margin-top: 1em;
+    color: darkblue;
+    font-family: "Consolas", "Courier New", monospace;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+/* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/popvzVw */
+.mark {
+-webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+animation: 1.5s highlight 1.5s 1 normal forwards;
+background-color: none;
+background: linear-gradient(90deg, #7efff5 50%, rgba(255, 255, 255, 0) 50%);
+background-size: 200% 100%;
+background-position: 100% 0;
+}
+
+@-webkit-keyframes highlight {
+to {
+background-position: 0 0;
+}
+}
+
+@keyframes highlight {
+to {
+background-position: 0 0;
+}
+}
+/* end credit */ 
+
+
+nav a {
+    color: darkblue;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:smaller;
+    padding: auto 1em;
+}
+nav a:hover {
+    color: cornflowerblue;
+}  
+nav a::after {
+    content: " ; ";
+}
+nav a:last-child::after {
+    content: "";
+}
+
+/* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/rNpaBJJ */
+.highlight-container, .highlight {
+position: relative;
+}
+.highlight-container {
+display: inline-block;
+}
+.highlight-container:before {
+content: " ";
+display: block;
+height: 50%;
+width: 100%;
+margin-left: -3px;
+margin-right: -3px;
+position: absolute;
+background: aquamarine;
+transform: rotate(2deg);
+top: 15px;
+left: -1px;
+border-radius: 20% 25% 20% 24%;
+padding: 3px 1px 1px 3px;
+}
+/* end credit */
+
+
+span.prns {
+    color: darkblue;
+    font-style:italic;
+    font-size: smaller;
+}
+
+
+::selection {
+    background: cornflowerblue;
+    color: #fff;
+}

@@ -148,3 +148,23 @@ span.prns {
     background: turquoise;
     color: darkblue;
 }
+
+
+#scroll-to-top {
+    z-index: 99999;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    background-color: darkblue;
+    color: lavender;
+    border: none;
+    padding: .5em;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 20% 25% 20% 24%;
+    transform: rotate(2deg);
+}
+#scroll-to-top:hover {
+    background-color: turquoise;
+    color: darkblue;
+}

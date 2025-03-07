@@ -14,12 +14,31 @@ body {
     font-family: "Consolas", "Courier New", monospace;
     font-weight: bold;
     font-size: 1.5em;
-    border-bottom: 3px solid darkblue;
-    border-top: 3px solid darkblue;
+
 }
 #header::after {
     content: "";
     clear: both;
+}
+
+#header, #footer {
+    width: 100%;
+    border-bottom: 3px solid darkblue;
+    border-top: 3px solid darkblue;
+
+}
+
+#footer {
+    background-color: lavender;
+    margin:auto;
+    padding: 1.5em 0;
+    text-align: center;
+    font-family: "Consolas", "Courier New", monospace;
+    font-weight: bold;
+}
+#footer-container {
+    width: 40%;
+    margin: auto;
 }
 
 #content {
@@ -60,7 +79,7 @@ a {
     -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
     animation: 1.5s highlight 1.5s 1 normal forwards;
     background-color: none;
-    background: linear-gradient(90deg, aquamarine 50%, rgba(255, 255, 255, 0) 50%);
+    background: linear-gradient(90deg, turquoise 50%, rgba(255, 255, 255, 0) 50%);
     border-radius: 20% 25% 20% 24%;
     transform: rotate(1.5deg);
     background-size: 200% 100%;
@@ -112,7 +131,7 @@ nav a:last-child::after {
     margin-left: -3px;
     margin-right: -3px;
     position: absolute;
-    background: aquamarine;
+    background: turquoise;
     transform: rotate(2deg);
     top: 15px;
     left: -1px;
@@ -128,6 +147,6 @@ span.prns {
 }
 
 ::selection {
-    background: aquamarine;
+    background: turquoise;
     color: darkblue;
 }

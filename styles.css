@@ -67,6 +67,11 @@ a {
     text-decoration: none;
 }
 
+p.project-info {
+    font-size: smaller;
+    font-style: italic;
+}
+
 /* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/popvzVw */
 .mark {
     -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;

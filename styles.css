@@ -63,11 +63,11 @@ h3 {
 }
 
 a {
-    color: darkblue;
+    color: cornflowerblue;
     text-decoration: none;
 }
 
-p.project-info {
+p.project-blurb {
     font-size: smaller;
     font-style: italic;
 }

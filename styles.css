@@ -66,6 +66,10 @@ a {
     color: cornflowerblue;
     text-decoration: none;
 }
+a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
 
 p.project-blurb {
     font-size: smaller;
@@ -142,6 +146,11 @@ span.prns {
     color: darkblue;
     font-style:italic;
     font-size: smaller;
+}
+
+span.skk {
+    color: darkblue;
+    padding: 0 .2em;
 }
 
 ::selection {

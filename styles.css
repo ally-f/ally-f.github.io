@@ -1,12 +1,26 @@
+:root {
+    --primary-color: cornflowerblue;
+    --secondary-color: darkblue;
+    --text-color: #000;
+    --content-color: lavender;
+    --highlight-color: turquoise;
+
+    --secondary-color-dark: #ffcc33;
+    --text-color-dark: rgb(224, 224, 224);
+    --content-color-dark: #003153;
+    --highlight-color-dark: #00827f;
+  }  
+
 body {
+    color: var(--text-color);
     background-color: cornflowerblue;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
     margin: 0;
     padding: 0;
     overflow:scroll;
 }
-.dark-body {
-    background-color: rgb(37, 37, 39);
+body.dark {
+    background-color: #003153;
     color: lavender;
 }
 
@@ -32,6 +46,7 @@ body {
     margin: 1em auto;
 }
 
+
 #footer {
     background-color: lavender;
     padding: 1.5em 0;
@@ -44,6 +59,19 @@ body {
     margin: auto;
 }
 
+#header.dark{
+    background-color: #003153;
+    color: lavender;
+    border-bottom: 3px solid #ffcc33;
+    border-top: 3px solid #ffcc33;
+} 
+#footer.dark {
+    background-color: #003153 !important;
+    color: lavender;
+    border-bottom: 3px solid #ffcc33;
+    border-top: 3px solid #ffcc33;
+}
+
 #content {
     background-color: lavender;
     border: 9px double darkblue;
@@ -53,8 +81,9 @@ body {
     position: relative;
 }
 #content.dark {
-    background-color: darkblue;
+    background-color: #003153;
     color: lavender;
+    border: #ffcc33 9px double;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,6 +99,10 @@ h3 {
     margin: 1.5em auto auto 0;
 }
 
+h1.dark, h2.dark, h3.dark, h4.dark, h5.dark, h6.dark {
+    color: #fff;
+}
+
 a {
     color: cornflowerblue;
     text-decoration: none;
@@ -77,6 +110,9 @@ a {
 a:hover {
     color: darkblue;
     text-decoration: underline;
+}
+a.dark {
+    color: #ffcc33;
 }
 
 p.project-blurb {
@@ -117,13 +153,17 @@ nav a {
 }
 nav a:hover {
     color: cornflowerblue;
-    
+    text-decoration:none;
 }  
 nav a::after {
     content: " ; "; 
 }
 nav a:last-child::after {
     content: "";
+}
+
+nav a.dark:hover {
+    color: var(--highlight-color-dark);
 }
 
 /* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/rNpaBJJ */
@@ -148,6 +188,13 @@ nav a:last-child::after {
     border-radius: 20% 25% 20% 24%;
     padding: 3px 1px 1px 3px;
 }
+.highlight-container:before.dark {
+    background: #00827f;
+}
+
+.mark.dark {
+    background: linear-gradient(90deg, #00827f 50%, lavender 50%);
+}
 /* end credit */
 
 span.prns {
@@ -160,10 +207,17 @@ span.skk {
     color: darkblue;
     padding: 0 .2em;
 }
+span.skk.dark, span.prns.dark {
+    color: #ffcc33;
+}
 
 ::selection {
     background: turquoise;
     color: darkblue;
+}
+::selection.dark {
+    background: #00827f;
+    color: lavender;
 }
 
 
@@ -185,27 +239,20 @@ span.skk {
     background-color: turquoise;
     color: darkblue;
 }
-.dark-button {
-    background-color: darkblue;
-    color: lavender;
+#scroll-to-top.dark {
+    background-color: #ffcc33;
+    color: darkblue;
 }
-.dark-button:hover {
+#scroll-to-top.dark:hover {
     background-color: lavender;
     color: darkblue;
 }
 
 
-#dark-mode {
+#dark-mode-button {
     z-index: 99999;
     position: fixed;
     top: 10px;
     right: 20px;
-    background-color: darkblue;
-    color: lavender;
-    border: none;
-    padding: .5em;
-    font-size: 1.5em;
-    cursor: pointer;
-    border-radius: 20% 25% 20% 24%;
-    transform: rotate(2deg);
+    font-size: 30px; 
 }

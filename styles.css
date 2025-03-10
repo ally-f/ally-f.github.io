@@ -5,6 +5,10 @@ body {
     padding: 0;
     overflow:scroll;
 }
+.dark-body {
+    background-color: rgb(37, 37, 39);
+    color: lavender;
+}
 
 #header {
     background-color: lavender;
@@ -47,6 +51,10 @@ body {
     width: 80%;
     margin:3em auto;
     position: relative;
+}
+#content.dark {
+    background-color: darkblue;
+    color: lavender;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -176,4 +184,28 @@ span.skk {
 #scroll-to-top:hover {
     background-color: turquoise;
     color: darkblue;
+}
+.dark-button {
+    background-color: darkblue;
+    color: lavender;
+}
+.dark-button:hover {
+    background-color: lavender;
+    color: darkblue;
+}
+
+
+#dark-mode {
+    z-index: 99999;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background-color: darkblue;
+    color: lavender;
+    border: none;
+    padding: .5em;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 20% 25% 20% 24%;
+    transform: rotate(2deg);
 }

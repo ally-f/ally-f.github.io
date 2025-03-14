@@ -7,7 +7,9 @@ function scrollToTop() {
 function darkMode() {
   document.body.classList.toggle("dark"); 
 
-  document.getElementById("scroll-to-top").classList.toggle("dark");
+  document.getElementById("stt").classList.toggle("dark");
+
+  document.getElementById("darkmode").classList.toggle("dark");
 
   document.getElementById("content").classList.toggle("dark");
 

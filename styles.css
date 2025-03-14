@@ -221,38 +221,42 @@ span.skk.dark, span.prns.dark {
 }
 
 
-#scroll-to-top {
-    z-index: 99999;
+/* bottom right buttons */
+table.button-container {
     position: fixed;
     bottom: 10px;
     right: 20px;
+    z-index: 99999;
+}
+
+.button {
+    z-index: 99999;
     background-color: darkblue;
     color: lavender;
     border: none;
     padding: .5em;
     font-size: 1.5em;
-    cursor: pointer;
-    border-radius: 20% 25% 20% 24%;
-    transform: rotate(2deg);
+    text-align: center;
 }
-#scroll-to-top:hover {
+.button:hover {
     background-color: turquoise;
     color: darkblue;
 }
-#scroll-to-top.dark {
+.button.dark {
     background-color: #ffcc33;
     color: darkblue;
 }
-#scroll-to-top.dark:hover {
+.button.dark:hover {
     background-color: lavender;
     color: darkblue;
 }
 
-
-#dark-mode-button {
-    z-index: 99999;
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    font-size: 30px; 
+#stt {
+    border-radius: 20% 25% 20% 24%;
+    transform: rotate(2deg);
+}
+#darkmode {
+    border-radius: 20% 25% 20% 24%;
+    transform: rotate(-2deg);
+    font-weight: bold;
 }

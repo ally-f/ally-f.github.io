@@ -11,6 +11,13 @@
     --highlight-color-dark: #00827f;
   }  
 
+.no-js {
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+
 body {
     color: var(--text-color);
     background-color: cornflowerblue;
@@ -24,9 +31,16 @@ body.dark {
     color: lavender;
 }
 
+/* header and footer */
+#header, #footer {
+    width: 100%;
+    border-bottom: 3px solid darkblue;
+    border-top: 3px solid darkblue;
+}
+
 #header {
     background-color: lavender;
-    margin:auto;
+    margin: 2em auto;
     padding: 1.5em 0;
     text-align: center;
     font-family: "Consolas", "Courier New", monospace;
@@ -39,16 +53,10 @@ body.dark {
     clear: both;
 }
 
-#header, #footer {
-    width: 100%;
-    border-bottom: 3px solid darkblue;
-    border-top: 3px solid darkblue;
-    margin: 1em auto;
-}
-
 
 #footer {
     background-color: lavender;
+    margin: 2em auto;
     padding: 1.5em 0;
     text-align: center;
     font-family: "Consolas", "Courier New", monospace;

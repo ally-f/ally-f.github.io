@@ -1,6 +1,7 @@
 /* Scroll to top button */
 function scrollToTop() {
-  window.scrollTo(0, 0);
+  history.pushState({}, null, '#'); // changes the url to base url, with '#' appended (cannot pass a blank string...)
+  window.scrollTo(0, 0); // forces scroll to top 
 }
 
 /* dark mode, reference https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp */

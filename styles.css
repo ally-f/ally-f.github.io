@@ -1,14 +1,22 @@
 :root {
-    --primary-color: cornflowerblue;
-    --secondary-color: darkblue;
-    --text-color: #000;
-    --content-color: lavender;
-    --highlight-color: turquoise;
+    --primary-color: #6495ed;
+    --secondary-color: #00008b;
+    --text-color: #030303;
+    --content-color: #e6e6fa;
+    --highlight-color: #40e0d0;
 
+    --primary-color-light: #6495ed; /* cornflowerblue */
+    --secondary-color-light: #00008b; /* darkblue */
+    --text-color-light: #030303;
+    --content-color-light: #e6e6fa; /* lavender */
+    --highlight-color-light: #40e0d0; /* turquoise */
+
+    --primary-color-dark: #003153;
     --secondary-color-dark: #ffcc33;
-    --text-color-dark: rgb(224, 224, 224);
+    --text-color-dark: #e6e6fa;
     --content-color-dark: #003153;
     --highlight-color-dark: #00827f;
+    /*note: for now, only use the -light vars if they are needed for any dark mode elements, and/or in inversions within light mode...*/
   }  
 
 .no-js {
@@ -20,26 +28,26 @@
 
 body {
     color: var(--text-color);
-    background-color: cornflowerblue;
+    background-color: var(--primary-color);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
     margin: 0;
     padding: 0;
     overflow:scroll;
 }
 body.dark {
-    background-color: #003153;
+    background-color: var(--content-color-dark);
     color: lavender;
 }
 
 /* header and footer */
 #header, #footer {
     width: 100%;
-    border-bottom: 3px solid darkblue;
-    border-top: 3px solid darkblue;
+    border-bottom: 3px solid var(--secondary-color);
+    border-top: 3px solid var(--secondary-color);
 }
 
 #header {
-    background-color: lavender;
+    background-color: var(--content-color);
     margin: 2em auto;
     padding: 1.5em 0;
     text-align: center;
@@ -55,7 +63,7 @@ body.dark {
 
 
 #footer {
-    background-color: lavender;
+    background-color: var(--content-color);
     margin: 2em auto;
     padding: 1.5em 0;
     text-align: center;
@@ -68,34 +76,34 @@ body.dark {
 }
 
 #header.dark{
-    background-color: #003153;
+    background-color: var(--primary-color-dark);
     color: lavender;
-    border-bottom: 3px solid #ffcc33;
-    border-top: 3px solid #ffcc33;
+    border-bottom: 3px solid var(--secondary-color-dark);
+    border-top: 3px solid var(--secondary-color-dark);
 } 
 #footer.dark {
-    background-color: #003153 !important;
+    background-color: var(--primary-color-dark) !important;
     color: lavender;
-    border-bottom: 3px solid #ffcc33;
-    border-top: 3px solid #ffcc33;
+    border-bottom: 3px solid var(--secondary-color-dark);
+    border-top: 3px solid var(--secondary-color-dark);
 }
 
 #content {
-    background-color: lavender;
-    border: 9px double darkblue;
+    background-color: var(--content-color);
+    border: 9px double var(--secondary-color);
     padding: 2em;
     width: 80%;
     margin:3em auto;
     position: relative;
 }
 #content.dark {
-    background-color: #003153;
-    color: lavender;
-    border: #ffcc33 9px double;
+    background-color: var(--primary-color-dark);
+    color: var(--content-color-light);
+    border: var(--secondary-color-dark) 9px double;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: darkblue;
+    color: var(--secondary-color-light);
     font-family: "Consolas", "Courier New", monospace;
     font-weight: bold;   
 }
@@ -108,19 +116,25 @@ h3 {
 }
 
 h1.dark, h2.dark, h3.dark, h4.dark, h5.dark, h6.dark {
-    color: #fff;
+    color: var(--text-color-dark);
 }
 
 a {
-    color: cornflowerblue;
+    color: var(--primary-color);
     text-decoration: none;
 }
 a:hover {
-    color: darkblue;
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 a.dark {
-    color: #ffcc33;
+    color: var(--secondary-color-dark);
+}
+
+a.ext:after { /*external links*/ 
+    content: ' [external]';
+    font-size: xx-small;
+    vertical-align: super;
 }
 
 p.project-blurb {
@@ -133,7 +147,7 @@ p.project-blurb {
     -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
     animation: 1.5s highlight 1.5s 1 normal forwards;
     background-color: none;
-    background: linear-gradient(90deg, turquoise 50%, rgba(255, 255, 255, 0) 50%);
+    background: linear-gradient(90deg, var(--highlight-color) 50%, rgba(255, 255, 255, 0) 50%);
     border-radius: 20% 25% 20% 24%;
     transform: rotate(1.5deg);
     background-size: 200% 100%;
@@ -141,6 +155,20 @@ p.project-blurb {
     width: 30%;
     margin:auto;
 }
+.mark.dark { /*trying to use property toggle here, not changing the vars yet */
+    /* too jank: this whole thing has to be re-copied or it will be static and/or not work. also still doesnt work when toggling dark to light... */
+    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+    animation: 1.5s highlight 1.5s 1 normal forwards;
+    background-color: none;
+    background: linear-gradient(90deg, var(--highlight-color-dark) 50%, rgba(255, 255, 255, 0) 50%);
+    border-radius: 20% 25% 20% 24%;
+    transform: rotate(1.5deg);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    width: 30%;
+    margin:auto;
+}
+
 @-webkit-keyframes highlight {
     to {
         background-position: 0 0;
@@ -151,16 +179,15 @@ p.project-blurb {
         background-position: 0 0;
     }
 }
-/* end credit */ 
 
 nav a {
-    color: darkblue;
+    color: var(--secondary-color);
     font-weight: bold;
     font-size:smaller;
     padding: auto 1em;
 }
 nav a:hover {
-    color: cornflowerblue;
+    color: var(--primary-color);
     text-decoration:none;
 }  
 nav a::after {
@@ -189,43 +216,53 @@ nav a.dark:hover {
     margin-left: -3px;
     margin-right: -3px;
     position: absolute;
-    background: turquoise;
+    background: var(--highlight-color);
     transform: rotate(2deg);
     top: 30px;
     left: -1px;
     border-radius: 20% 25% 20% 24%;
     padding: 3px 1px 1px 3px;
 }
-.highlight-container:before.dark {
-    background: #00827f;
+/*
+.highlight-container.dark:before { /* cant do this; cannot change values of pseudos directly 
+    content: " ";
+    display: block;
+    height: 50%;
+    width: 100%;
+    margin-left: -3px;
+    margin-right: -3px;
+    position: absolute;
+    background: var(--highlight-color-dark);
+    transform: rotate(2deg);
+    top: 30px;
+    left: -1px;
+    border-radius: 20% 25% 20% 24%;
+    padding: 3px 1px 1px 3px;
 }
-
-.mark.dark {
-    background: linear-gradient(90deg, #00827f 50%, lavender 50%);
-}
+*/
 /* end credit */
 
 span.prns {
-    color: darkblue;
+    color: var(--secondary-color);
     font-style:italic;
     font-size: smaller;
 }
 
 span.skk {
-    color: darkblue;
+    color: var(--secondary-color);
     padding: 0 .2em;
 }
 span.skk.dark, span.prns.dark {
-    color: #ffcc33;
+    color: var(--secondary-color-dark);
 }
 
 ::selection {
-    background: turquoise;
-    color: darkblue;
+    background: var(--highlight-color);
+    color: var(--secondary-color);
 }
 ::selection.dark {
-    background: #00827f;
-    color: lavender;
+    background: var(--highlight-color-dark);
+    color: var(--text-color-dark);
 }
 
 
@@ -239,24 +276,24 @@ table.button-container {
 
 .button {
     z-index: 99999;
-    background-color: darkblue;
-    color: lavender;
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
     border: none;
     padding: .5em;
     font-size: 1.5em;
     text-align: center;
 }
 .button:hover {
-    background-color: turquoise;
-    color: darkblue;
+    background-color: var(--highlight-color);
+    color: var(--secondary-color);
 }
 .button.dark {
-    background-color: #ffcc33;
-    color: darkblue;
+    background-color: var(--secondary-color-dark);
+    color: var(--secondary-color-light);
 }
 .button.dark:hover {
-    background-color: lavender;
-    color: darkblue;
+    background-color: var(--content-color);
+    color: var(--secondary-color-light);
 }
 
 #stt {

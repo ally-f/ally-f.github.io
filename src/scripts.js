@@ -50,38 +50,25 @@ function darkMode() {
   var rootStyles = getComputedStyle(root);
 
   var rootStyles = rootStyles.getPropertyValue('--highlight-color'); /* this is used to determine what the current color scheme is for ONE var...*/
-  /*
-  if (rootStyles == 'black') { // if dark mode
-    root.style.setProperty('--dark', 'white');
+  
+  if (rootStyles == '--highlight-color-dark') { // if dark mode - may need to get the VALUE of this var somehow, idk if this returns the actual variable or its value 
+    root.style.setProperty('--highlight-color', '--highlight-color-light');
   }
   else {
-    root.style.setProperty('--dark', 'black');
-  }
-    */
-    
-
-  //if ((--highlight-color) == (--highlight-color-light)) {
-  //this does not work bc they are css vars. how to retrieve them? from the document? root?? see above...
-
-    //set the var to the dark one
     root.style.setProperty('--highlight-color', '--highlight-color-dark');
-
-  //}
- // else {
-    //set the var to the lite one
-  //  document.documentElement.style.setProperty//('--highlight-color', '--highlight-color-light');
-  //}
+  }
 }
 
 
 /* email address obfuscator */
 function obfuscateEmail() {
   var rra_liame = ['a', 'l', 'm', 'f', 'r', '0', '0', 'at', 'g', 'm', 'a', 'i', 'l', 'dot', 'c', 'o', 'm'];
+  // this format protects from web scrapers 
 
   var rts_liame = '';
   for (var i=0; i<rra_liame.length; i++) {
     if (rra_liame[i] == "at") {
-      rts_liame = rts_liame + '@;';
+      rts_liame = rts_liame + '@';
     }
     else if (rra_liame[i] == "dot") {
       rts_liame = rts_liame + '.';
@@ -90,40 +77,23 @@ function obfuscateEmail() {
       rts_liame = rts_liame + rra_liame[i];
     }
   }
-    // why does this just append "@" a bunch of times? 
+  /*could create a new element, then insert that before or inside (- inside preferable, but how?) link element./*
 
-    /*put this inside the p somehow...*/
+  /*could you also just return the plain text and embed it into the href directly...? */
 
-    //rts_liame.join('');
-
-    const newDiv = document.createElement("span");
-
-    // and give it some content
-    const newContent = document.createTextNode(rts_liame);
   
-    // add the text node to the newly created div
-    newDiv.appendChild(newContent);
+  const newDiv = document.createElement("a");
+
+  // and give it some content
+  const newContent = document.createTextNode(rts_liame);
+
+  // add the text node to the newly created div (huh??? what is the text node exactly?)
+  newDiv.appendChild(newContent);
 
 
-    const currentDiv = document.getElementById("header"); //test
-    document.documentElement.insertBefore(newDiv, currentDiv);
-  
-  
-  console.log(rts_liame)
-  return rts_liame;
+  const currentDiv = document.getElementById("liame"); //test
+  document.documentElement.insertBefore(newDiv, currentDiv);
 }
-
-/*have to instantiate the document first...? or can it be called directly from html file?*/
-document.documentElement.onload = obfuscateEmail;
-
-
-function addElement() {
-  // create a new div element
-  
-
-  // add the newly created element and its content into the DOM
-}
-
 
 function egg() {
 

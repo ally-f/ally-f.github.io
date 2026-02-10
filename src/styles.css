@@ -147,7 +147,7 @@ p.project-blurb {
     -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
     animation: 1.5s highlight 1.5s 1 normal forwards;
     background-color: none;
-    background: linear-gradient(90deg, var(--highlight-color) 50%, rgba(255, 255, 255, 0) 50%);
+    background: linear-gradient(90deg, var(--highlight-color-light) 50%, rgba(255, 255, 255, 0) 50%);
     border-radius: 20% 25% 20% 24%;
     transform: rotate(1.5deg);
     background-size: 200% 100%;
@@ -216,15 +216,15 @@ nav a.dark:hover {
     margin-left: -3px;
     margin-right: -3px;
     position: absolute;
-    background: var(--highlight-color);
+    background: var(--highlight-color-light);
     transform: rotate(2deg);
     top: 30px;
     left: -1px;
     border-radius: 20% 25% 20% 24%;
     padding: 3px 1px 1px 3px;
 }
-/*
-.highlight-container.dark:before { /* cant do this; cannot change values of pseudos directly 
+
+.highlight-container.dark:before { /* cant do this; cannot change values of pseudos directly */
     content: " ";
     display: block;
     height: 50%;
@@ -239,7 +239,7 @@ nav a.dark:hover {
     border-radius: 20% 25% 20% 24%;
     padding: 3px 1px 1px 3px;
 }
-*/
+
 /* end credit */
 
 span.prns {

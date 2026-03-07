@@ -1,0 +1,334 @@
+:root {
+  --primary-color: #6495ed;
+  --secondary-color: #00008b;
+  --text-color: #030303;
+  --content-color: lavender;
+  --highlight-color: turquoise;
+
+  --primary-color-light: #6495ed;
+  /* cornflowerblue */
+  --secondary-color-light: #00008b;
+  /* darkblue */
+  --text-color-light: #030303;
+  --content-color-light: lavender;
+  /* lavender */
+  --highlight-color-light: turquoise;
+  /* turquoise */
+
+  --primary-color-dark: #031c2e;
+  --secondary-color-dark: #ffbf00;
+  --text-color-dark: #dedeee;
+  --secondary-text-color-dark: #00070d;
+  --content-color-dark: #003153;
+  --highlight-color-dark: #7575ca;
+}
+
+.no-js {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
+
+body.dark {
+  background-color: var(--content-color-dark);
+  color: lavender;
+}
+
+/* header and footer */
+#header,
+#footer {
+  width: 100%;
+  border-bottom: 4px solid var(--secondary-color);
+  border-top: 4px solid var(--secondary-color);
+}
+
+#header {
+  background-color: var(--content-color);
+  margin: 2em auto;
+  padding: 1.5em 0;
+  text-align: center;
+  font-family: "Consolas", "Courier New", monospace;
+  font-weight: bold;
+  font-size: 1.5em;
+
+}
+
+#header::after {
+  content: "";
+  clear: both;
+}
+
+
+#footer {
+  background-color: var(--content-color);
+  margin: 2em auto;
+  padding: 1.5em 0;
+  text-align: center;
+  font-family: "Consolas", "Courier New", monospace;
+  font-weight: bold;
+}
+
+#footer-container {
+  width: 40%;
+  margin: auto;
+}
+
+ 
+
+#header.dark,
+#footer.dark {
+  background-color: var(--primary-color-dark) !important;
+  color: lavender;
+  border-bottom: 9px double var(--content-color-dark);
+  border-top: 9px double var(--content-color-dark);
+}
+
+/* content */
+#content {
+  background-color: var(--content-color);
+  border: 9px double var(--secondary-color);
+  padding: 2em;
+  width: 80%;
+  margin: 3em auto;
+  position: relative;
+}
+
+#content.dark {
+  background-color: var(--primary-color-dark);
+  color: var(--content-color-light);
+  border: 9px double var(--content-color-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--secondary-color-light);
+  font-family: "Consolas", "Courier New", monospace;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 1.5em auto auto 0;
+  font-size: 1.5em;
+}
+
+h3 {
+  margin: 1.5em auto auto 0;
+}
+
+h1.dark,
+h2.dark {
+  color: var(--primary-color-dark) !important;
+}
+
+h3.dark {
+  color: var(--content-color-light) !important;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+a.dark {
+  color: var(--secondary-color-dark);
+}
+
+a.ext:after {
+  /*external links*/
+  content: ' [external]';
+  font-size: xx-small;
+  vertical-align: super;
+}
+
+p.project-blurb {
+  font-size: smaller;
+  font-style: italic;
+}
+
+/* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/popvzVw */
+.mark {
+  -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+  animation: 1.5s highlight 1.5s 1 normal forwards;
+  background-color: none;
+  background: linear-gradient(90deg, var(--highlight-color-light) 50%, rgba(255, 255, 255, 0) 50%);
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(1.5deg);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  width: 30%;
+  max-width: 10em;
+  margin: auto;
+}
+
+.mark.dark {
+  /*trying to use property toggle here, not changing the vars yet */
+  /* too jank: this whole thing has to be re-copied or it will be static and/or not work. also still doesnt work when toggling dark to light... */
+  -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+  animation: 1.5s highlight 1.5s 1 normal forwards;
+  background-color: none;
+  background: linear-gradient(90deg, var(--highlight-color-dark) 50%, rgba(255, 255, 255, 0) 50%);
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(1.5deg);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  width: 30%;
+  max-width: 10em;
+  margin: auto;
+}
+
+@-webkit-keyframes highlight {
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes highlight {
+  to {
+    background-position: 0 0;
+  }
+}
+
+/* navi, routing */
+
+nav.react-router-nav {
+  display:none;
+}
+
+nav a {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: smaller;
+  padding: auto 1em;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+nav a::after {
+  content: " ; ";
+}
+
+nav a:last-child::after {
+  content: "";
+}
+
+nav a.dark:hover {
+  color: var(--highlight-color-dark);
+}
+
+/* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/rNpaBJJ */
+
+.highlight-container {
+  position: relative;
+  display: inline-block;
+  width: 6em;
+}
+
+.highlight {
+  content: " ";
+  display: block;
+  background-color: var(--highlight-color-light);
+  transform: rotate(-2deg);
+  border-radius: 20% 25% 20% 24%;
+  height: 10%;
+  width: 200%;
+  text-align: center;
+}
+
+.highlight.dark {
+  background-color: var(--highlight-color-dark) !important;
+}
+
+/* end credit */
+
+span.prns {
+  color: var(--secondary-color);
+  font-style: italic;
+  font-size: smaller;
+}
+
+span.skk {
+  color: var(--secondary-color);
+  padding: 0 .2em;
+}
+
+span.skk.dark,
+span.prns.dark {
+  color: var(--highlight-color-dark);
+}
+
+::selection {
+  background: var(--highlight-color);
+  color: var(--secondary-color);
+}
+
+::selection.dark {
+  background: var(--highlight-color-dark);
+  color: var(--text-color-dark);
+}
+
+
+/* bottom right buttons */
+table.button-container {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 99999;
+}
+
+.button {
+  z-index: 99999;
+  background-color: var(--secondary-color);
+  color: var(--text-color-dark);
+  border: none;
+  padding: .5em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: var(--highlight-color);
+  color: var(--secondary-color);
+}
+
+.button.dark {
+  background-color: var(--secondary-color-dark);
+  color: var(--secondary-color-light);
+}
+
+.button.dark:hover {
+  background-color: var(--content-color);
+  color: var(--secondary-color-light);
+}
+
+#stt {
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(2deg);
+}
+
+#darkmode {
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(-2deg);
+  font-weight: bold;
+}

@@ -83,22 +83,4 @@ export function obfuscateEmail() {
   /*could you also just return the plain text and embed it into the href directly...? */
 
   return rts_liame;
-  
-  /* this injects the element to the dom; separate out from this method 
-  const newDiv = document.createElement("a");
-
-  // and give it some content
-  const newContent = document.createTextNode(rts_liame);
-
-  // add the text node to the newly created div (huh??? what is the text node exactly?)
-  newDiv.appendChild(newContent);
-
-
-  const currentDiv = document.getElementById("liame"); //test
-  document.documentElement.insertBefore(newDiv, currentDiv);*/
 }
-  
-/*
-function egg() {
-
-}*/

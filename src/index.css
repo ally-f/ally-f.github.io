@@ -8,11 +8,11 @@
   --highlight-color-light: turquoise; /* turquoise */
 
   /* DARK */
-  --primary-color-dark: #031c2e;
+  --primary-color-dark: #022640;
   --secondary-color-dark: #ffbf00;
-  --text-color-dark: #b3b3d4;
+  --text-color-dark: lavender;
   --secondary-text-color-dark: #000205;
-  --content-color-dark: #003153;
+  --content-color-dark: #011727;
   --highlight-color-dark: #7575ca;
 }
 
@@ -34,27 +34,26 @@ body {
 
 body.dark {
   color: var(--text-color-dark);
-  background-color: var(--content-color-dark);
+  background-color: var(--primary-color-dark);
 }
 
 /* HEADER, FOOTER */
 #header,
 #footer {
+  background-color: var(--content-color-light);
   width: 100%;
-  border-bottom: 4px solid var(--secondary-color-light);
-  border-top: 4px solid var(--secondary-color-light);
+  border-bottom: 3px solid var(--secondary-color-light);
+  border-top: 3px solid var(--secondary-color-light);
 }
 
 #header.dark,
 #footer.dark {
-  background-color: var(--primary-color-dark) !important;
-  color: lavender;
-  border-bottom: 4px solid var(--secondary-text-color-dark);
-  border-top: 4px solid var(--secondary-text-color-dark);
+  background-color: var(--content-color-dark) !important;
+  border-bottom: 3px solid var(--secondary-text-color-dark);
+  border-top: 3px solid var(--secondary-text-color-dark);
 }
 
 #header {
-  background-color: var(--content-color-light);
   margin: 2em auto;
   padding: 1.5em 0;
   text-align: center;
@@ -69,7 +68,6 @@ body.dark {
 }
 
 #footer {
-  background-color: var(--content-color-light);
   margin: 2em auto;
   padding: 1.5em 0;
   text-align: center;
@@ -86,7 +84,7 @@ body.dark {
 /* CONTENT */
 #content {
   background-color: var(--content-color-light);
-  border: 12px double var(--secondary-color-light);
+  border: 9px double var(--secondary-color-light);
   padding: 2em;
   width: 80%;
   margin: 3em auto;
@@ -94,7 +92,7 @@ body.dark {
 }
 
 #content.dark {
-  background-color: var(--primary-color-dark);
+  background-color: var(--content-color-dark);
   color: var(--content-color-light);
   border: 9px double var(--secondary-text-color-dark);
 }
@@ -122,7 +120,7 @@ h3 {
 
 h1.dark,
 h2.dark {
-  color: var(--primary-color-dark) !important;
+  color: var(--content-color-dark) !important;
 }
 
 h3.dark {

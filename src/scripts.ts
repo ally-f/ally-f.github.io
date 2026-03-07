@@ -1,22 +1,22 @@
 /* Scroll to top button */
-function scrollToTop() {
-  history.pushState({}, null, '#'); // changes the url to base url, with '#' appended (cannot pass a blank string...)
+export function scrollToTop() {
+  history.pushState({}, '', '#'); // changes the url to base url, with '#' appended (cannot pass a blank string...)
   window.scrollTo(0, 0); // forces scroll to top 
 }
 
 /* dark mode, reference https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp */
-function darkMode() {
+export function darkMode() {
   document.body.classList.toggle("dark"); 
 
-  document.getElementById("stt").classList.toggle("dark");
+  document.getElementById("stt")?.classList.toggle("dark");
 
-  document.getElementById("darkmode").classList.toggle("dark");
+  document.getElementById("darkmode")?.classList.toggle("dark");
 
-  document.getElementById("content").classList.toggle("dark");
+  document.getElementById("content")?.classList.toggle("dark");
 
-  document.getElementById("header").classList.toggle("dark");
+  document.getElementById("header")?.classList.toggle("dark");
 
-  document.getElementById("footer").classList.toggle("dark");
+  document.getElementById("footer")?.classList.toggle("dark");
   
   var h3 = document.getElementsByTagName("h3"); 
   for (var i = 0; i < h3.length; i++) {
@@ -49,9 +49,9 @@ function darkMode() {
   var root = document.documentElement;
   var rootStyles = getComputedStyle(root);
 
-  var rootStyles = rootStyles.getPropertyValue('--highlight-color'); /* this is used to determine what the current color scheme is for ONE var...*/
+  var highlightColor = rootStyles.getPropertyValue('--highlight-color'); /* this is used to determine what the current color scheme is for ONE var...*/
   
-  if (rootStyles == '--highlight-color-dark') { // if dark mode - may need to get the VALUE of this var somehow, idk if this returns the actual variable or its value 
+  if (highlightColor == '--highlight-color-dark') { // if dark mode - may need to get the VALUE of this var somehow, idk if this returns the actual variable or its value 
     root.style.setProperty('--highlight-color', '--highlight-color-light');
   }
   else {
@@ -61,7 +61,7 @@ function darkMode() {
 
 
 /* email address obfuscator */
-function obfuscateEmail() {
+export function obfuscateEmail() {
   var rra_liame = ['a', 'l', 'm', 'f', 'r', '0', '0', 'at', 'g', 'm', 'a', 'i', 'l', 'dot', 'c', 'o', 'm'];
   // this format protects from web scrapers 
 

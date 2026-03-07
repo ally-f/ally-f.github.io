@@ -1,5 +1,4 @@
 :root {
-
   /* LIGHT */
   --primary-color-light: cornflowerblue;  /* cornflowerblue */
   --secondary-color-light: darkblue; /* darkblue */
@@ -172,8 +171,6 @@ p.project-blurb {
 }
 
 .mark.dark {
-  /*trying to use property toggle here, not changing the vars yet */
-  /* too jank: this whole thing has to be re-copied or it will be static and/or not work. also still doesnt work when toggling dark to light... */
   -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
   animation: 1.5s highlight 1.5s 1 normal forwards;
   background-color: none;
@@ -199,11 +196,7 @@ p.project-blurb {
   }
 }
 
-/* NAVI, ROUTING */
-
-nav.react-router-nav {
-  display:none;
-}
+/* NAV BAR */
 
 nav a {
   color: var(--secondary-color-light);
@@ -296,6 +289,10 @@ table.button-container {
   padding: .5em;
   font-size: 1.5em;
   text-align: center;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .button:hover {
@@ -322,4 +319,40 @@ table.button-container {
   border-radius: 20% 25% 20% 24%;
   transform: rotate(-2deg);
   font-weight: bold;
+}
+
+
+/* REACT ROUTER */
+nav.react-router-nav {
+  display: none;
+}
+
+
+table.button-container.left {
+  left: 20px;
+}
+
+nav.react-router-nav.expanded {
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  z-index: 99999;
+}
+
+
+#menu {
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  z-index: 99999;
+  background-color: var(white);
+  color: var(black);
+  border: none;
+  padding: .5em;
+  font-size: 1.5em;
+  text-align: center;
+
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(-1deg);
 }

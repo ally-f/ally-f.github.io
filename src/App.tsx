@@ -23,7 +23,7 @@ const Home = () => {
 
       <div id="header">
         <div className="mark"><h1>Hello!</h1></div>
-        <nav>
+        <nav className="header-nav">
           <a href="#about">About Me</a>
           <a href="#skills">My Skills</a>
           <a href="#projects">My Projects</a>
@@ -31,7 +31,7 @@ const Home = () => {
       </div>
 
       <div id="content">
-        <p>Welcome to my website! My name is Ally <span className="prns">(they/them)</span>, and I am a hobbyist software developer. I love all things full-stack, especially front-end development. I'm passionate about learning new things, coding and otherwise. I love being challenged and improving my skills, so I'm always looking for new opportunities to work on various projects.</p>
+        <p>Welcome to my website! My name is Ally <span className="prns">(they/them)</span>, and I am a quality assurance specialist and hobbyist software developer. I love all things full-stack, especially front-end development. I'm passionate about learning new things, coding and otherwise. I love being challenged and improving my skills, so I'm always looking for new opportunities to work on various projects.</p>
 
         <p>Thank you so much for checking out my website. I'm excited to share my work with you!</p>
 
@@ -45,12 +45,14 @@ const Home = () => {
 
         <p>I eventually picked up Java and Python during college and have built various kinds of projects using them, ranging from fun object-oriented card games, to machine learning, to scalable <a href="https://www.ibm.com/think/topics/three-tier-architecture">three-tier solutions</a>. I spent much of my free time exploring these languages in particular.</p>
 
-        <p>After college, I began work in software quality assurance at Power Home Remodeling, where I have found various ways to utilize coding as an invaluable tool. I am on two software development teams for the Corporate Finance sector of the company. Working with stakeholders in Accounting and Payroll, I frequently create queries the MySQL database to create test data and observe changes. I also picked up Ruby in that time, writing scripts to expedite the process of testing, especially when comparing data from different sources. One of my favorite parts of the role is finding solutions to new problems with code and queries, as well as figuring out how to reuse processes for maximum efficiency!</p>
+        <p>After college, I began work in software quality assurance at Power Home Remodeling, where I have found various ways to utilize coding as an invaluable tool. I am on two software development teams for the Corporate Finance sector of the company, where we work with stakeholders in Accounting and Payroll, automating many of their hand-done workflows, making them easier and more efficient. Some of my favorite parts of the role include finding solutions to new problems with code and queries, finding ways to maximize reusability, and discovering new ways to introduce quality into our code.</p>
+          
+        <p>My testing incorporates several different methods, ranging from simple manual testing to automated testing. I frequently engineer and utilize MySQL queries to create test data and observe changes. Occasionally I use Ruby scripts to expedite the process of testing certain data-heavy stories, especially when comparing data from different sources or complex queries. I have created and contributed to, alongside other QAs on our teams, a repository of Playwright scripts specific to Corporate Finance that automate many parts of our end-to-end testing.</p>
 
         <p>For some examples of personal and school-related projects I've worked on, see <a href="#projects">my projects</a>!</p>
 
         <h3>Personal Life</h3>
-        <p>In my free time, I like to write, play video games, scrapbook, and learn other languages (especially Japanese, French, and Russian!). I also have a cat named Triangle, also known as さんかく ("sankaku"). <span className="skk">=^.^=</span></p>
+        <p>In my free time, I like to write, play video games, scrapbook (see the Gallery page!), and learn other languages (especially Japanese, French, and Russian!). I also have a cat named Triangle, also known as さんかく ("sankaku"). <span className="skk">=^.^=</span></p>
 
         <span className="highlight-container">
           <span className="highlight">
@@ -61,20 +63,21 @@ const Home = () => {
         <ul>
           <li>HTML</li>
           <li>CSS</li>
-          <li>JavaScript</li>
+          <li>JavaScript/Typescript</li>
           <li>Java</li>
           <li>Python</li>
           <li>Angular 2+</li>
           <li>Ruby</li>
           <li>MySQL</li>
           <li>Oracle SQL</li>
+          <li>Playwright</li>
         </ul>
         <p>... and many more to come!</p>
 
 
         <span className="highlight-container">
           <span className="highlight">
-            <h2 id="skills">My Projects</h2>
+            <h2 id="projects">My Projects</h2>
           </span>
         </span>
         <h3>Intelligent YouTube spam detector</h3>

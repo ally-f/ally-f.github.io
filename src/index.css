@@ -1,38 +1,31 @@
 :root {
-  --primary-color: #6495ed;
-  --secondary-color: #00008b;
-  --text-color: #030303;
-  --content-color: lavender;
-  --highlight-color: turquoise;
 
-  --primary-color-light: #6495ed;
-  /* cornflowerblue */
-  --secondary-color-light: #00008b;
-  /* darkblue */
+  /* LIGHT */
+  --primary-color-light: cornflowerblue;  /* cornflowerblue */
+  --secondary-color-light: darkblue; /* darkblue */
   --text-color-light: #030303;
-  --content-color-light: lavender;
-  /* lavender */
-  --highlight-color-light: turquoise;
-  /* turquoise */
+  --content-color-light: lavender; /* lavender */
+  --highlight-color-light: turquoise; /* turquoise */
 
+  /* DARK */
   --primary-color-dark: #031c2e;
   --secondary-color-dark: #ffbf00;
-  --text-color-dark: #dedeee;
-  --secondary-text-color-dark: #00070d;
+  --text-color-dark: #b3b3d4;
+  --secondary-text-color-dark: #000205;
   --content-color-dark: #003153;
   --highlight-color-dark: #7575ca;
 }
 
 .no-js {
-  color: var(--secondary-color);
+  color: var(--secondary-color-light);
   font-weight: bold;
   font-size: 1em;
   text-align: center;
 }
 
 body {
-  color: var(--text-color);
-  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  background-color: var(--primary-color-light);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
   margin: 0;
   padding: 0;
@@ -40,27 +33,34 @@ body {
 }
 
 body.dark {
+  color: var(--text-color-dark);
   background-color: var(--content-color-dark);
-  color: lavender;
 }
 
-/* header and footer */
+/* HEADER, FOOTER */
 #header,
 #footer {
   width: 100%;
-  border-bottom: 4px solid var(--secondary-color);
-  border-top: 4px solid var(--secondary-color);
+  border-bottom: 4px solid var(--secondary-color-light);
+  border-top: 4px solid var(--secondary-color-light);
+}
+
+#header.dark,
+#footer.dark {
+  background-color: var(--primary-color-dark) !important;
+  color: lavender;
+  border-bottom: 4px solid var(--secondary-text-color-dark);
+  border-top: 4px solid var(--secondary-text-color-dark);
 }
 
 #header {
-  background-color: var(--content-color);
+  background-color: var(--content-color-light);
   margin: 2em auto;
   padding: 1.5em 0;
   text-align: center;
   font-family: "Consolas", "Courier New", monospace;
   font-weight: bold;
   font-size: 1.5em;
-
 }
 
 #header::after {
@@ -68,9 +68,8 @@ body.dark {
   clear: both;
 }
 
-
 #footer {
-  background-color: var(--content-color);
+  background-color: var(--content-color-light);
   margin: 2em auto;
   padding: 1.5em 0;
   text-align: center;
@@ -83,20 +82,11 @@ body.dark {
   margin: auto;
 }
 
- 
 
-#header.dark,
-#footer.dark {
-  background-color: var(--primary-color-dark) !important;
-  color: lavender;
-  border-bottom: 9px double var(--content-color-dark);
-  border-top: 9px double var(--content-color-dark);
-}
-
-/* content */
+/* CONTENT */
 #content {
-  background-color: var(--content-color);
-  border: 9px double var(--secondary-color);
+  background-color: var(--content-color-light);
+  border: 12px double var(--secondary-color-light);
   padding: 2em;
   width: 80%;
   margin: 3em auto;
@@ -106,9 +96,10 @@ body.dark {
 #content.dark {
   background-color: var(--primary-color-dark);
   color: var(--content-color-light);
-  border: 9px double var(--content-color-dark);
+  border: 9px double var(--secondary-text-color-dark);
 }
 
+/* TEXT */
 h1,
 h2,
 h3,
@@ -138,13 +129,14 @@ h3.dark {
   color: var(--content-color-light) !important;
 }
 
+
 a {
-  color: var(--primary-color);
+  color: var(--primary-color-light);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: var(--secondary-color-light);
   text-decoration: underline;
 }
 
@@ -164,6 +156,8 @@ p.project-blurb {
   font-style: italic;
 }
 
+
+/* TITLE */
 /* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/popvzVw */
 .mark {
   -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
@@ -207,21 +201,21 @@ p.project-blurb {
   }
 }
 
-/* navi, routing */
+/* NAVI, ROUTING */
 
 nav.react-router-nav {
   display:none;
 }
 
 nav a {
-  color: var(--secondary-color);
+  color: var(--secondary-color-light);
   font-weight: bold;
   font-size: smaller;
   padding: auto 1em;
 }
 
 nav a:hover {
-  color: var(--primary-color);
+  color: var(--primary-color-light);
   text-decoration: none;
 }
 
@@ -238,7 +232,6 @@ nav a.dark:hover {
 }
 
 /* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/rNpaBJJ */
-
 .highlight-container {
   position: relative;
   display: inline-block;
@@ -259,17 +252,16 @@ nav a.dark:hover {
 .highlight.dark {
   background-color: var(--highlight-color-dark) !important;
 }
-
 /* end credit */
 
 span.prns {
-  color: var(--secondary-color);
+  color: var(--secondary-color-light);
   font-style: italic;
   font-size: smaller;
 }
 
 span.skk {
-  color: var(--secondary-color);
+  color: var(--secondary-color-light);
   padding: 0 .2em;
 }
 
@@ -279,8 +271,8 @@ span.prns.dark {
 }
 
 ::selection {
-  background: var(--highlight-color);
-  color: var(--secondary-color);
+  background: var(--highlight-color-light);
+  color: var(--secondary-color-light);
 }
 
 ::selection.dark {
@@ -289,7 +281,8 @@ span.prns.dark {
 }
 
 
-/* bottom right buttons */
+/* BOTTOM RIGHT BUTTONS */
+
 table.button-container {
   position: fixed;
   bottom: 10px;
@@ -299,7 +292,7 @@ table.button-container {
 
 .button {
   z-index: 99999;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color-light);
   color: var(--text-color-dark);
   border: none;
   padding: .5em;
@@ -308,7 +301,7 @@ table.button-container {
 }
 
 .button:hover {
-  background-color: var(--highlight-color);
+  background-color: var(--highlight-color-light);
   color: var(--secondary-color);
 }
 
@@ -318,7 +311,7 @@ table.button-container {
 }
 
 .button.dark:hover {
-  background-color: var(--content-color);
+  background-color: var(--content-color-light);
   color: var(--secondary-color-light);
 }
 

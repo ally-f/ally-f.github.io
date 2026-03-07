@@ -84,3 +84,14 @@ export function obfuscateEmail() {
 
   return rts_liame;
 }
+
+/* opens the router navigation menu */
+export function expandMenu() {
+  let menu = document.getElementsByClassName("react-router-nav")[0];
+  if (menu.classList.contains("expanded")) {
+    menu.classList.remove("expanded");
+  }
+  else {
+    menu.classList.add("expanded");
+  }
+}

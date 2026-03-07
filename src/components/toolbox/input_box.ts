@@ -58,10 +58,11 @@ function focusInput() {
     itemInput?.focus();
 }
 
+/*
 function saveListToFile() {
     //list.print();
 }
-
+*/
 
 // Call loadItems() on page load
 loadItems();

@@ -18,38 +18,38 @@ export function darkMode() {
 
   document.getElementById("footer")?.classList.toggle("dark");
   
-  var h3 = document.getElementsByTagName("h3"); 
-  for (var i = 0; i < h3.length; i++) {
+  let h3 = document.getElementsByTagName("h3"); 
+  for (let i = 0; i < h3.length; i++) {
     h3[i].classList.toggle("dark");
   }
 
-  var a = document.getElementsByTagName("a"); 
-  for (var i = 0; i < a.length; i++) {
+  let a = document.getElementsByTagName("a"); 
+  for (let i = 0; i < a.length; i++) {
     a[i].classList.toggle("dark");
   }
 
-  var skk = document.getElementsByClassName("skk"); 
-  for (var i = 0; i < skk.length; i++) {
+  let skk = document.getElementsByClassName("skk"); 
+  for (let i = 0; i < skk.length; i++) {
     skk[i].classList.toggle("dark");
   }
 
-  var prns = document.getElementsByClassName("prns"); 
-  for (var i = 0; i < prns.length; i++) {
+  let prns = document.getElementsByClassName("prns"); 
+  for (let i = 0; i < prns.length; i++) {
     prns[i].classList.toggle("dark");
   }
 
-  var prns = document.getElementsByClassName("mark"); 
-  for (var i = 0; i < prns.length; i++) {
-    prns[i].classList.toggle("dark");
+  let mark = document.getElementsByClassName("mark"); 
+  for (let i = 0; i < mark.length; i++) {
+    mark[i].classList.toggle("dark");
   }
 
   /* since you cannot change the values of pseudos directly, we can change the variable itself */
 
   
-  var root = document.documentElement;
-  var rootStyles = getComputedStyle(root);
+  const root = document.documentElement;
+  let rootStyles = getComputedStyle(root);
 
-  var highlightColor = rootStyles.getPropertyValue('--highlight-color'); /* this is used to determine what the current color scheme is for ONE var...*/
+  let highlightColor = rootStyles.getPropertyValue('--highlight-color'); /* this is used to determine what the current color scheme is for ONE var...*/
   
   if (highlightColor == '--highlight-color-dark') { // if dark mode - may need to get the VALUE of this var somehow, idk if this returns the actual variable or its value 
     root.style.setProperty('--highlight-color', '--highlight-color-light');
@@ -62,10 +62,10 @@ export function darkMode() {
 
 /* email address obfuscator */
 export function obfuscateEmail() {
-  var rra_liame = ['a', 'l', 'm', 'f', 'r', '0', '0', 'at', 'g', 'm', 'a', 'i', 'l', 'dot', 'c', 'o', 'm'];
+  let rra_liame = ['a', 'l', 'm', 'f', 'r', '0', '0', 'at', 'g', 'm', 'a', 'i', 'l', 'dot', 'c', 'o', 'm'];
   // this format protects from web scrapers 
 
-  var rts_liame = '';
+  let rts_liame = '';
   for (var i=0; i<rra_liame.length; i++) {
     if (rra_liame[i] == "at") {
       rts_liame = rts_liame + '@';
@@ -94,7 +94,7 @@ export function obfuscateEmail() {
   const currentDiv = document.getElementById("liame"); //test
   document.documentElement.insertBefore(newDiv, currentDiv);
 }
-
+/*
 function egg() {
 
-}
+}*/

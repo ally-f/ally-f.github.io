@@ -1,22 +1,17 @@
 import './App.css'
 import { darkMode, scrollToTop } from './scripts.ts';
-import React from "react";
-import ReactDOM from 'react-dom/client';
 
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link,
-  useNavigate,
-  Outlet,
+  useNavigate
 } from "react-router-dom";
 
 
 // Home Page Component
 const Home = () => {
-  const navigate = useNavigate();
-
   return (
     <div>
       <noscript><p className="no-js"> Please enable JavaScript for the best experience. </p></noscript>

@@ -323,31 +323,17 @@ table.button-container {
 
 
 /* REACT ROUTER */
-nav.react-router-nav {
-  display: none;
-}
-
 
 table.button-container.left {
   left: 20px;
 }
 
-nav.react-router-nav.expanded {
-  display: block;
-  position: fixed;
-  bottom: 10px;
-  left: 20px;
-  z-index: 99999;
-}
-
-
+/* menu button */
 #menu {
   position: fixed;
   bottom: 10px;
   left: 20px;
   z-index: 99999;
-  background-color: var(white);
-  color: var(black);
   border: none;
   padding: .5em;
   font-size: 1.5em;
@@ -355,4 +341,17 @@ nav.react-router-nav.expanded {
 
   border-radius: 20% 25% 20% 24%;
   transform: rotate(-1deg);
+}
+
+/* router popup menu */
+nav.react-router-nav {
+  display: none;
+}
+
+nav.react-router-nav.expanded {
+  display: block;
+  position: relative;
+  bottom: 50px;
+  left: -40px;
+  z-index: 99999;
 }

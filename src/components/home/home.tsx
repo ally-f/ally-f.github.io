@@ -3,6 +3,7 @@ import { expandMenu } from './home.ts';
 import { scrollToTop } from './home.ts';
 
 import './home.css'
+import { Link } from 'react-router-dom';
 
 export default function Home () {
   return (
@@ -16,6 +17,18 @@ export default function Home () {
 
     <table className="button-container left">
       <tr><td><div id="menu" className="button" onClick={() => expandMenu()}>&equiv;</div></td></tr>
+
+      <nav className='react-router-nav'>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                {/* <li><Link to="/toolbox">Toolbox</Link></li> */}
+                <li>
+                  <Link to="/gallery">Gallery</Link>
+                </li>
+              </ul>
+            </nav>
     </table>
 
     <div id="header">
@@ -49,7 +62,9 @@ export default function Home () {
         <p>For some examples of personal and school-related projects I've worked on, see <a href="#projects">my projects</a>!</p>
 
         <h3>Personal Life</h3>
-        <p>In my free time, I like to write, play video games, scrapbook (see the Gallery page!), and learn other languages (especially Japanese, French, and Russian!). I also have a cat named Triangle, also known as さんかく ("sankaku"). <span className="skk">=^.^=</span></p>
+        <p>In my free time, I like to write, play video games, scrapbook, and learn other languages (especially Japanese, French, and Russian!). I also have a cat named Triangle, also known as さんかく ("sankaku"). <span className="skk">=^.^=</span></p>
+
+        <p>You can see some of the art I have made by visiting the Gallery via the hamburger menu on the bottom left of the page.</p>
 
         <span className="highlight-container">
           <span className="highlight">

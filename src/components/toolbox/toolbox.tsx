@@ -26,6 +26,9 @@ export default function Toolbox () {
     <br />
     <button id="clearButton">Clear all items</button>
     </div>
+
+    <button className="back_button" onClick={() => navigate("/")}>Go back</button>
+
     </body>
 
     <script src="input_box.ts"></script>

@@ -27,7 +27,6 @@ const Home = () => {
           <a href="#about">About Me</a>
           <a href="#skills">My Skills</a>
           <a href="#projects">My Projects</a>
-          <a href="#projects">Utilities</a>
         </nav>
       </div>
 
@@ -37,7 +36,9 @@ const Home = () => {
         <p>Thank you so much for checking out my website. I'm excited to share my work with you!</p>
 
         <span className="highlight-container">
-          <h2 id="about" className="highlight">About Me</h2>
+          <span className="highlight">
+            <h2 id="about">About Me</h2>
+          </span>
         </span>
         <h3>Education and Work</h3>
         <p>I have a Bachelor's in Computer Science from Stockton University (Fall 2018 – Fall 2022). I started with HTML and CSS in middle school and fell in love with them instantly. Since then, I have created and published various website designs, both from scratch (like this one!) and using frameworks, like <a href="https://www.w3schools.com/whatis/whatis_bootstrap.asp/">Bootstrap</a>.</p>
@@ -52,7 +53,9 @@ const Home = () => {
         <p>In my free time, I like to write, play video games, scrapbook, and learn other languages (especially Japanese, French, and Russian!). I also have a cat named Triangle, also known as さんかく ("sankaku"). <span className="skk">=^.^=</span></p>
 
         <span className="highlight-container">
-          <h2 id="skills" className="highlight">My Skills</h2>
+          <span className="highlight">
+          <h2 id="skills">My Skills</h2>
+          </span>
         </span>
         <p>Here are some of the key skills I have learned and used throughout my career:</p>
         <ul>
@@ -70,7 +73,9 @@ const Home = () => {
 
 
         <span className="highlight-container">
-          <h2 id="projects" className="highlight">My Projects</h2>
+          <span className="highlight">
+            <h2 id="skills">My Projects</h2>
+          </span>
         </span>
         <h3>Intelligent YouTube spam detector</h3>
         <p className="project-blurb">Using: Python (<a href="https://scikit-learn.org/stable/index.html">sk-learn</a>)</p>
@@ -128,7 +133,7 @@ const Gallery = () => {
 function App() {
   return (
     <Router>
-      <nav>
+      <nav className='react-router-nav'>
         <ul>
           <li>
             <Link to="/">Home</Link>

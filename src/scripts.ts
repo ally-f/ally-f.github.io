@@ -5,6 +5,7 @@ export function scrollToTop() {
 }
 
 /* dark mode, reference https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp */
+/*there has to be a way to optimize this; pull out the loop thing into its own method? */ 
 export function darkMode() {
   document.body.classList.toggle("dark"); 
 
@@ -17,7 +18,17 @@ export function darkMode() {
   document.getElementById("header")?.classList.toggle("dark");
 
   document.getElementById("footer")?.classList.toggle("dark");
-  
+
+  let h1 = document.getElementsByTagName("h1");
+  for (let i = 0; i < h1.length; i++) {
+    h1[i].classList.toggle("dark");
+  }
+
+  let h2 = document.getElementsByTagName("h2");
+  for (let i = 0; i < h2.length; i++) {
+    h2[i].classList.toggle("dark");
+  }
+
   let h3 = document.getElementsByTagName("h3"); 
   for (let i = 0; i < h3.length; i++) {
     h3[i].classList.toggle("dark");
@@ -43,22 +54,12 @@ export function darkMode() {
     mark[i].classList.toggle("dark");
   }
 
-  /* since you cannot change the values of pseudos directly, we can change the variable itself */
 
-  
-  const root = document.documentElement;
-  let rootStyles = getComputedStyle(root);
-
-  let highlightColor = rootStyles.getPropertyValue('--highlight-color'); /* this is used to determine what the current color scheme is for ONE var...*/
-  
-  if (highlightColor == '--highlight-color-dark') { // if dark mode - may need to get the VALUE of this var somehow, idk if this returns the actual variable or its value 
-    root.style.setProperty('--highlight-color', '--highlight-color-light');
+  let highlight = document.getElementsByClassName("highlight"); 
+  for (let i = 0; i < highlight.length; i++) {
+    highlight[i].classList.toggle("dark");
   }
-  else {
-    root.style.setProperty('--highlight-color', '--highlight-color-dark');
   }
-}
-
 
 /* email address obfuscator */
 export function obfuscateEmail() {
@@ -81,7 +82,9 @@ export function obfuscateEmail() {
 
   /*could you also just return the plain text and embed it into the href directly...? */
 
+  return rts_liame;
   
+  /* this injects the element to the dom; separate out from this method 
   const newDiv = document.createElement("a");
 
   // and give it some content
@@ -92,8 +95,9 @@ export function obfuscateEmail() {
 
 
   const currentDiv = document.getElementById("liame"); //test
-  document.documentElement.insertBefore(newDiv, currentDiv);
+  document.documentElement.insertBefore(newDiv, currentDiv);*/
 }
+  
 /*
 function egg() {
 

@@ -2,25 +2,25 @@
   --primary-color: #6495ed;
   --secondary-color: #00008b;
   --text-color: #030303;
-  --content-color: #e6e6fa;
-  --highlight-color: #40e0d0;
+  --content-color: lavender;
+  --highlight-color: turquoise;
 
   --primary-color-light: #6495ed;
   /* cornflowerblue */
   --secondary-color-light: #00008b;
   /* darkblue */
   --text-color-light: #030303;
-  --content-color-light: #e6e6fa;
+  --content-color-light: lavender;
   /* lavender */
-  --highlight-color-light: #40e0d0;
+  --highlight-color-light: turquoise;
   /* turquoise */
 
-  --primary-color-dark: #003153;
-  --secondary-color-dark: #ffcc33;
-  --text-color-dark: #e6e6fa;
+  --primary-color-dark: #031c2e;
+  --secondary-color-dark: #ffbf00;
+  --text-color-dark: #dedeee;
+  --secondary-text-color-dark: #00070d;
   --content-color-dark: #003153;
-  --highlight-color-dark: #00827f;
-  /*note: for now, only use the -light vars if they are needed for any dark mode elements, and/or in inversions within light mode...*/
+  --highlight-color-dark: #7575ca;
 }
 
 .no-js {
@@ -48,8 +48,8 @@ body.dark {
 #header,
 #footer {
   width: 100%;
-  border-bottom: 3px solid var(--secondary-color);
-  border-top: 3px solid var(--secondary-color);
+  border-bottom: 4px solid var(--secondary-color);
+  border-top: 4px solid var(--secondary-color);
 }
 
 #header {
@@ -83,20 +83,17 @@ body.dark {
   margin: auto;
 }
 
-#header.dark {
-  background-color: var(--primary-color-dark);
-  color: lavender;
-  border-bottom: 3px solid var(--secondary-color-dark);
-  border-top: 3px solid var(--secondary-color-dark);
-}
+ 
 
+#header.dark,
 #footer.dark {
   background-color: var(--primary-color-dark) !important;
   color: lavender;
-  border-bottom: 3px solid var(--secondary-color-dark);
-  border-top: 3px solid var(--secondary-color-dark);
+  border-bottom: 9px double var(--content-color-dark);
+  border-top: 9px double var(--content-color-dark);
 }
 
+/* content */
 #content {
   background-color: var(--content-color);
   border: 9px double var(--secondary-color);
@@ -109,7 +106,7 @@ body.dark {
 #content.dark {
   background-color: var(--primary-color-dark);
   color: var(--content-color-light);
-  border: var(--secondary-color-dark) 9px double;
+  border: 9px double var(--content-color-dark);
 }
 
 h1,
@@ -133,12 +130,12 @@ h3 {
 }
 
 h1.dark,
-h2.dark,
-h3.dark,
-h4.dark,
-h5.dark,
-h6.dark {
-  color: var(--text-color-dark);
+h2.dark {
+  color: var(--primary-color-dark) !important;
+}
+
+h3.dark {
+  color: var(--content-color-light) !important;
 }
 
 a {
@@ -178,6 +175,7 @@ p.project-blurb {
   background-size: 200% 100%;
   background-position: 100% 0;
   width: 30%;
+  max-width: 10em;
   margin: auto;
 }
 
@@ -193,6 +191,7 @@ p.project-blurb {
   background-size: 200% 100%;
   background-position: 100% 0;
   width: 30%;
+  max-width: 10em;
   margin: auto;
 }
 
@@ -206,6 +205,12 @@ p.project-blurb {
   to {
     background-position: 0 0;
   }
+}
+
+/* navi, routing */
+
+nav.react-router-nav {
+  display:none;
 }
 
 nav a {
@@ -233,46 +238,26 @@ nav a.dark:hover {
 }
 
 /* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/rNpaBJJ */
-.highlight-container,
-.highlight {
-  position: relative;
-}
 
 .highlight-container {
+  position: relative;
   display: inline-block;
+  width: 6em;
 }
 
-.highlight-container:before {
+.highlight {
   content: " ";
   display: block;
-  height: 50%;
-  width: 100%;
-  margin-left: -3px;
-  margin-right: -3px;
-  position: absolute;
-  background: var(--highlight-color-light);
-  transform: rotate(2deg);
-  top: 30px;
-  left: -1px;
+  background-color: var(--highlight-color-light);
+  transform: rotate(-2deg);
   border-radius: 20% 25% 20% 24%;
-  padding: 3px 1px 1px 3px;
+  height: 10%;
+  width: 200%;
+  text-align: center;
 }
 
-.highlight-container.dark:before {
-  /* cant do this; cannot change values of pseudos directly */
-  content: " ";
-  display: block;
-  height: 50%;
-  width: 100%;
-  margin-left: -3px;
-  margin-right: -3px;
-  position: absolute;
-  background: var(--highlight-color-dark);
-  transform: rotate(2deg);
-  top: 30px;
-  left: -1px;
-  border-radius: 20% 25% 20% 24%;
-  padding: 3px 1px 1px 3px;
+.highlight.dark {
+  background-color: var(--highlight-color-dark) !important;
 }
 
 /* end credit */
@@ -290,7 +275,7 @@ span.skk {
 
 span.skk.dark,
 span.prns.dark {
-  color: var(--secondary-color-dark);
+  color: var(--highlight-color-dark);
 }
 
 ::selection {

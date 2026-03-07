@@ -1,68 +1,349 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --primary-color: #6495ed;
+  --secondary-color: #00008b;
+  --text-color: #030303;
+  --content-color: #e6e6fa;
+  --highlight-color: #40e0d0;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --primary-color-light: #6495ed;
+  /* cornflowerblue */
+  --secondary-color-light: #00008b;
+  /* darkblue */
+  --text-color-light: #030303;
+  --content-color-light: #e6e6fa;
+  /* lavender */
+  --highlight-color-light: #40e0d0;
+  /* turquoise */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --primary-color-dark: #003153;
+  --secondary-color-dark: #ffcc33;
+  --text-color-dark: #e6e6fa;
+  --content-color-dark: #003153;
+  --highlight-color-dark: #00827f;
+  /*note: for now, only use the -light vars if they are needed for any dark mode elements, and/or in inversions within light mode...*/
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.no-js {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
 }
 
 body {
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  overflow: scroll;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body.dark {
+  background-color: var(--content-color-dark);
+  color: lavender;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* header and footer */
+#header,
+#footer {
+  width: 100%;
+  border-bottom: 3px solid var(--secondary-color);
+  border-top: 3px solid var(--secondary-color);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+#header {
+  background-color: var(--content-color);
+  margin: 2em auto;
+  padding: 1.5em 0;
+  text-align: center;
+  font-family: "Consolas", "Courier New", monospace;
+  font-weight: bold;
+  font-size: 1.5em;
+
+}
+
+#header::after {
+  content: "";
+  clear: both;
+}
+
+
+#footer {
+  background-color: var(--content-color);
+  margin: 2em auto;
+  padding: 1.5em 0;
+  text-align: center;
+  font-family: "Consolas", "Courier New", monospace;
+  font-weight: bold;
+}
+
+#footer-container {
+  width: 40%;
+  margin: auto;
+}
+
+#header.dark {
+  background-color: var(--primary-color-dark);
+  color: lavender;
+  border-bottom: 3px solid var(--secondary-color-dark);
+  border-top: 3px solid var(--secondary-color-dark);
+}
+
+#footer.dark {
+  background-color: var(--primary-color-dark) !important;
+  color: lavender;
+  border-bottom: 3px solid var(--secondary-color-dark);
+  border-top: 3px solid var(--secondary-color-dark);
+}
+
+#content {
+  background-color: var(--content-color);
+  border: 9px double var(--secondary-color);
+  padding: 2em;
+  width: 80%;
+  margin: 3em auto;
+  position: relative;
+}
+
+#content.dark {
+  background-color: var(--primary-color-dark);
+  color: var(--content-color-light);
+  border: var(--secondary-color-dark) 9px double;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--secondary-color-light);
+  font-family: "Consolas", "Courier New", monospace;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 1.5em auto auto 0;
+  font-size: 1.5em;
+}
+
+h3 {
+  margin: 1.5em auto auto 0;
+}
+
+h1.dark,
+h2.dark,
+h3.dark,
+h4.dark,
+h5.dark,
+h6.dark {
+  color: var(--text-color-dark);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+a.dark {
+  color: var(--secondary-color-dark);
+}
+
+a.ext:after {
+  /*external links*/
+  content: ' [external]';
+  font-size: xx-small;
+  vertical-align: super;
+}
+
+p.project-blurb {
+  font-size: smaller;
+  font-style: italic;
+}
+
+/* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/popvzVw */
+.mark {
+  -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+  animation: 1.5s highlight 1.5s 1 normal forwards;
+  background-color: none;
+  background: linear-gradient(90deg, var(--highlight-color-light) 50%, rgba(255, 255, 255, 0) 50%);
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(1.5deg);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  width: 30%;
+  margin: auto;
+}
+
+.mark.dark {
+  /*trying to use property toggle here, not changing the vars yet */
+  /* too jank: this whole thing has to be re-copied or it will be static and/or not work. also still doesnt work when toggling dark to light... */
+  -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+  animation: 1.5s highlight 1.5s 1 normal forwards;
+  background-color: none;
+  background: linear-gradient(90deg, var(--highlight-color-dark) 50%, rgba(255, 255, 255, 0) 50%);
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(1.5deg);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  width: 30%;
+  margin: auto;
+}
+
+@-webkit-keyframes highlight {
+  to {
+    background-position: 0 0;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@keyframes highlight {
+  to {
+    background-position: 0 0;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+nav a {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: smaller;
+  padding: auto 1em;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+nav a::after {
+  content: " ; ";
+}
+
+nav a:last-child::after {
+  content: "";
+}
+
+nav a.dark:hover {
+  color: var(--highlight-color-dark);
+}
+
+/* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/rNpaBJJ */
+.highlight-container,
+.highlight {
+  position: relative;
+}
+
+.highlight-container {
+  display: inline-block;
+}
+
+.highlight-container:before {
+  content: " ";
+  display: block;
+  height: 50%;
+  width: 100%;
+  margin-left: -3px;
+  margin-right: -3px;
+  position: absolute;
+  background: var(--highlight-color-light);
+  transform: rotate(2deg);
+  top: 30px;
+  left: -1px;
+  border-radius: 20% 25% 20% 24%;
+  padding: 3px 1px 1px 3px;
+}
+
+.highlight-container.dark:before {
+  /* cant do this; cannot change values of pseudos directly */
+  content: " ";
+  display: block;
+  height: 50%;
+  width: 100%;
+  margin-left: -3px;
+  margin-right: -3px;
+  position: absolute;
+  background: var(--highlight-color-dark);
+  transform: rotate(2deg);
+  top: 30px;
+  left: -1px;
+  border-radius: 20% 25% 20% 24%;
+  padding: 3px 1px 1px 3px;
+}
+
+/* end credit */
+
+span.prns {
+  color: var(--secondary-color);
+  font-style: italic;
+  font-size: smaller;
+}
+
+span.skk {
+  color: var(--secondary-color);
+  padding: 0 .2em;
+}
+
+span.skk.dark,
+span.prns.dark {
+  color: var(--secondary-color-dark);
+}
+
+::selection {
+  background: var(--highlight-color);
+  color: var(--secondary-color);
+}
+
+::selection.dark {
+  background: var(--highlight-color-dark);
+  color: var(--text-color-dark);
+}
+
+
+/* bottom right buttons */
+table.button-container {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 99999;
+}
+
+.button {
+  z-index: 99999;
+  background-color: var(--secondary-color);
+  color: var(--text-color-dark);
+  border: none;
+  padding: .5em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: var(--highlight-color);
+  color: var(--secondary-color);
+}
+
+.button.dark {
+  background-color: var(--secondary-color-dark);
+  color: var(--secondary-color-light);
+}
+
+.button.dark:hover {
+  background-color: var(--content-color);
+  color: var(--secondary-color-light);
+}
+
+#stt {
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(2deg);
+}
+
+#darkmode {
+  border-radius: 20% 25% 20% 24%;
+  transform: rotate(-2deg);
+  font-weight: bold;
 }

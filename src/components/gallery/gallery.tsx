@@ -55,11 +55,11 @@ export default function Gallery() {
       <div id="footer">
         <div id="footer-container">
           <p>      
-            <div className="back_button" onClick={() => navigate("/")}>&larr; Go back</div>
+            <div className="back_button" onClick={() => navigate("/")}>&larr; Go back Home</div>
           </p>
         </div>
       </div>
-      
+
     </div>
   );
 };

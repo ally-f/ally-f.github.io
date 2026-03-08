@@ -1,31 +1,37 @@
 {
-  "hash": "440b834f",
+  "hash": "a555f1d4",
   "configHash": "179e72d7",
-  "lockfileHash": "56f17340",
-  "browserHash": "6e02e865",
+  "lockfileHash": "62755469",
+  "browserHash": "93e12733",
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "1814fc72",
+      "fileHash": "1f1d174b",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "e8448eb4",
+      "fileHash": "0c8d6550",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "65e7aae1",
+      "fileHash": "ce87629b",
       "needsInterop": true
     },
     "react-router-dom": {
       "src": "../../node_modules/react-router-dom/dist/index.js",
       "file": "react-router-dom.js",
-      "fileHash": "b6bbbf11",
+      "fileHash": "35b03250",
+      "needsInterop": false
+    },
+    "react-image-gallery": {
+      "src": "../../node_modules/react-image-gallery/build/image-gallery.es.js",
+      "file": "react-image-gallery.js",
+      "fileHash": "0c1c4fa5",
       "needsInterop": false
     }
   },

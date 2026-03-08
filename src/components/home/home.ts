@@ -2,71 +2,56 @@
 var dark = false;
 export default dark;
 
+const elementsToDarkToggle = [
+  ["id", "menu"], 
+  ["id", "react-router-wrapper"], 
+  ["id", "stt"], 
+  ["id", "darkmode"],
+  ["id", "content"], 
+  ["id", "header"], 
+  ["id", "footer"], 
 
-/* Scroll to top button */
-export function scrollToTop() {
-  history.pushState({}, '', '#'); // changes the url to base url, with '#' appended (cannot pass a blank string...)
-  window.scrollTo(0, 0); // forces scroll to top 
-}
+  ["class", "skk"],
+  ["class", "prns"],
+  ["class", "mark"],
+  ["class", "highlight"],
+  ["class", "version"],
 
+  ["tag", "h1"],
+  ["tag", "h2"],
+  ["tag", "h3"],
+  ["tag", "a"],
+  ["tag", "body"]
+];
 
 /* dark mode, reference https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp */
-/*there has to be a way to optimize this; pull out the loop thing into its own method? */ 
+/* make this reusable by passing elementstodarktoggle as a parameter; can then use on other pages that need different elements toggled */ 
 export function toggleDarkMode() {
-  document.body.classList.toggle("dark"); 
+  // nodes
+  //document.body.classList.toggle("dark"); 
 
-  document.getElementById("menu")?.classList.toggle("dark");
-  document.getElementById("react-router-wrapper")?.classList.toggle("dark");
-
-  document.getElementById("stt")?.classList.toggle("dark");
-
-  document.getElementById("darkmode")?.classList.toggle("dark");
-
-  document.getElementById("content")?.classList.toggle("dark");
-
-  document.getElementById("header")?.classList.toggle("dark");
-
-  document.getElementById("footer")?.classList.toggle("dark");
-
-  let h1 = document.getElementsByTagName("h1");
-  for (let i = 0; i < h1.length; i++) {
-    h1[i].classList.toggle("dark");
-  }
-
-  let h2 = document.getElementsByTagName("h2");
-  for (let i = 0; i < h2.length; i++) {
-    h2[i].classList.toggle("dark");
-  }
-
-  let h3 = document.getElementsByTagName("h3"); 
-  for (let i = 0; i < h3.length; i++) {
-    h3[i].classList.toggle("dark");
-  }
-
-  let a = document.getElementsByTagName("a"); 
-  for (let i = 0; i < a.length; i++) {
-    a[i].classList.toggle("dark");
-  }
-
-  let skk = document.getElementsByClassName("skk"); 
-  for (let i = 0; i < skk.length; i++) {
-    skk[i].classList.toggle("dark");
-  }
-
-  let prns = document.getElementsByClassName("prns"); 
-  for (let i = 0; i < prns.length; i++) {
-    prns[i].classList.toggle("dark");
-  }
-
-  let mark = document.getElementsByClassName("mark"); 
-  for (let i = 0; i < mark.length; i++) {
-    mark[i].classList.toggle("dark");
-  }
-
-
-  let highlight = document.getElementsByClassName("highlight"); 
-  for (let i = 0; i < highlight.length; i++) {
-    highlight[i].classList.toggle("dark");
+  for (let i = 0; i < elementsToDarkToggle.length; i++) {
+    // ids
+   if (elementsToDarkToggle[i][0] == "id") {
+      document.getElementById(elementsToDarkToggle[i][1])?.classList.toggle("dark");
+    }
+    // classes
+    else if (elementsToDarkToggle[i][0] == "class") {
+      let elements = document.getElementsByClassName(elementsToDarkToggle[i][1]);
+      for (let j = 0; j < elements.length; j++) {
+        elements[j].classList.toggle("dark");
+      }
+    }
+    // tags
+    else if (elementsToDarkToggle[i][0] == "tag") {
+      let elements = document.getElementsByTagName(elementsToDarkToggle[i][1]);
+      for (let j = 0; j < elements.length; j++) {
+        elements[j].classList.toggle("dark");
+      }
+    }
+    else {
+      console.error("Invalid selector type in elementsToDarkToggle");
+    }
   }
 
   // toggle dark tracker
@@ -85,7 +70,7 @@ export function forceDark() {
   }
 }
 
-/* email address obfuscator */
+/* email address obfuscator (WIP) */
 export function obfuscateEmail() {
   let rra_liame = ['a', 'l', 'm', 'f', 'r', '0', '0', 'at', 'g', 'm', 'a', 'i', 'l', 'dot', 'c', 'o', 'm'];
   // this format protects from web scrapers 
@@ -120,3 +105,8 @@ export function expandMenu() {
   }
 }
 
+/* scroll to top button */
+export function scrollToTop() {
+  history.pushState({}, '', '#'); // changes the url to base url, with '#' appended (cannot pass a blank string...)
+  window.scrollTo(0, 0); // forces scroll to top 
+}

@@ -172,6 +172,10 @@ p.version {
   color: var(--secondary-color-light);
 }
 
+p.version.dark {
+  color: var(--highlight-color-dark) !important;
+}
+
 p.project-blurb {
   font-size: smaller;
   font-style: italic;

@@ -8,22 +8,22 @@ import type { GalleryItem, ImageGalleryRef } from "react-image-gallery";
 
 const images: GalleryItem[] = [
   {
-    srcSet: "assets/img/1.jpg 1024w, assets/img/1.jpg 800w, assets/img/1.jpg 640w",
+    srcSet: "assets/img/3.jpg 1024w, assets/img/3.jpg 800w, assets/img/3.jpg 640w",
     sizes: "(max-width: 1024px) 100vw, (max-width: 800px) 100vw, (max-width: 640px) 100vw, 1024px",
-    original: "assets/img/1.jpg",
-    thumbnail: "assets/img/1.jpg",
+    original: "assets/img/3.jpg",
+    thumbnail: "assets/img/3.jpg",
   },
   {
-    srcSet: "assets/img/2.jpg 1024w, assets/img/2.jpg 800w, assets/img/2.jpg 640w",
+    srcSet: "assets/img/4.jpg 1024w, assets/img/4.jpg 800w, assets/img/4.jpg 640w",
     sizes: "(max-width: 1024px) 100vw, (max-width: 800px) 100vw, (max-width: 640px) 100vw, 1024px",
-    original: "assets/img/2.jpg",
-    thumbnail: "assets/img/2.jpg",
+    original: "assets/img/4.jpg",
+    thumbnail: "assets/img/4.jpg",
   },
   {
-    srcSet: "assets/img/6.jpg 1024w, assets/img/6.jpg 800w, assets/img/6.jpg 640w",
+    srcSet: "assets/img/5.jpg 1024w, assets/img/5.jpg 800w, assets/img/5.jpg 640w",
     sizes: "(max-width: 1024px) 100vw, (max-width: 800px) 100vw, (max-width: 640px) 100vw, 1024px",
-    original: "assets/img/6.jpg",
-    thumbnail: "assets/img/6.jpg",
+    original: "assets/img/5.jpg",
+    thumbnail: "assets/img/5.jpg",
   },
 ];
 
@@ -58,8 +58,8 @@ export default function Gallery() {
             <div className="back_button" onClick={() => navigate("/")}>&larr; Go back</div>
           </p>
         </div>
-
       </div>
+      
     </div>
   );
 };

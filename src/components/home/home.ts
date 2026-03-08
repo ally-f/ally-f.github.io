@@ -15,6 +15,9 @@ export function scrollToTop() {
 export function toggleDarkMode() {
   document.body.classList.toggle("dark"); 
 
+  document.getElementById("menu")?.classList.toggle("dark");
+  document.getElementById("react-router-nav")?.getElementsByClassName("expanded")[0]?.classList.toggle("dark");
+
   document.getElementById("stt")?.classList.toggle("dark");
 
   document.getElementById("darkmode")?.classList.toggle("dark");
@@ -55,7 +58,7 @@ export function toggleDarkMode() {
     prns[i].classList.toggle("dark");
   }
 
-  let mark = document.getElementsByClassName("highlight-title"); 
+  let mark = document.getElementsByClassName("mark"); 
   for (let i = 0; i < mark.length; i++) {
     mark[i].classList.toggle("dark");
   }

@@ -44,7 +44,7 @@ export default function Home () {
           <p>Welcome to my website! My name is Ally <span className="prns">(they/them)</span>, and I am a quality assurance specialist and hobbyist software developer. I love all things full-stack, especially front-end development. I'm passionate about learning new things, coding and otherwise. I love being challenged and improving my skills, so I'm always looking for new opportunities to work on various projects.</p>
 
           <p>Thank you so much for checking out my website. I'm excited to share my work with you!</p>
-
+ 
           <span className="highlight-container">
             <span className="highlight">
               <h2 id="about">About Me</h2>
@@ -64,7 +64,7 @@ export default function Home () {
           <h3>Personal Life</h3>
           <p>In my free time, I like to write, play video games, scrapbook, and learn other languages (especially Japanese, French, and Russian!). I also have a cat named Triangle, also known as さんかく ("sankaku"). <span className="skk">=^.^=</span></p>
 
-          <p>You can see some of the art I have made by visiting the Gallery via the hamburger menu on the bottom left of the page.</p>
+          <p>You can see some of the scrapbook art I have made by visiting the Gallery via the hamburger menu on the bottom left of the page.</p>
 
           <span className="highlight-container">
             <span className="highlight">

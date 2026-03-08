@@ -8,20 +8,26 @@ import type { GalleryItem, ImageGalleryRef } from "react-image-gallery";
 
 const images: GalleryItem[] = [
   {
-    original: "../../assets/images/artwork1.jpg",
-    thumbnail: "../../assets/react.svg",
+    srcSet: "assets/img/1.jpg 1024w, assets/img/1.jpg 800w, assets/img/1.jpg 640w",
+    sizes: "(max-width: 1024px) 100vw, (max-width: 800px) 100vw, (max-width: 640px) 100vw, 1024px",
+    original: "assets/img/1.jpg",
+    thumbnail: "assets/img/1.jpg",
   },
   {
-    original: "../../assets/images/artwork2.jpg",
-    thumbnail: "../../assets/images/artwork2_thumb.jpg",
+    srcSet: "assets/img/2.jpg 1024w, assets/img/2.jpg 800w, assets/img/2.jpg 640w",
+    sizes: "(max-width: 1024px) 100vw, (max-width: 800px) 100vw, (max-width: 640px) 100vw, 1024px",
+    original: "assets/img/2.jpg",
+    thumbnail: "assets/img/2.jpg",
   },
   {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
+    srcSet: "assets/img/6.jpg 1024w, assets/img/6.jpg 800w, assets/img/6.jpg 640w",
+    sizes: "(max-width: 1024px) 100vw, (max-width: 800px) 100vw, (max-width: 640px) 100vw, 1024px",
+    original: "assets/img/6.jpg",
+    thumbnail: "assets/img/6.jpg",
   },
 ];
 
-export default function Gallery() {
+export default function Gallery() { 
   const navigate = useNavigate();
   const galleryRef = useRef<ImageGalleryRef>(null);
 
@@ -32,12 +38,17 @@ export default function Gallery() {
 
     <div id="content">
       <div id="current-image">
-          <img src="" alt="artwork" />
           <ImageGallery
             ref={galleryRef}
             items={images}
-            onSlide={(index) => console.log("Slid to", index)}
+            onSlide={(index) => console.log("Slid to", index+1)}
+            showThumbnails={false}
+
           />
+      </div>
+
+      <div id="description">
+        
       </div>
     </div>
 

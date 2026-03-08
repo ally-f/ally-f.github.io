@@ -1,12 +1,18 @@
+// whether dark mode is enabled; default off 
+var dark = false;
+export default dark;
+
+
 /* Scroll to top button */
 export function scrollToTop() {
   history.pushState({}, '', '#'); // changes the url to base url, with '#' appended (cannot pass a blank string...)
   window.scrollTo(0, 0); // forces scroll to top 
 }
 
+
 /* dark mode, reference https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp */
 /*there has to be a way to optimize this; pull out the loop thing into its own method? */ 
-export function darkMode() {
+export function toggleDarkMode() {
   document.body.classList.toggle("dark"); 
 
   document.getElementById("stt")?.classList.toggle("dark");
@@ -49,7 +55,7 @@ export function darkMode() {
     prns[i].classList.toggle("dark");
   }
 
-  let mark = document.getElementsByClassName("mark"); 
+  let mark = document.getElementsByClassName("highlight-title"); 
   for (let i = 0; i < mark.length; i++) {
     mark[i].classList.toggle("dark");
   }
@@ -59,7 +65,22 @@ export function darkMode() {
   for (let i = 0; i < highlight.length; i++) {
     highlight[i].classList.toggle("dark");
   }
+
+  // toggle dark tracker
+  if (dark == false) {
+    dark = true;
   }
+  else {
+    dark = false;
+  }
+}
+
+export function forceDark() {
+  if (dark) {
+    toggleDarkMode();
+    dark = false;
+  }
+}
 
 /* email address obfuscator */
 export function obfuscateEmail() {
@@ -95,3 +116,4 @@ export function expandMenu() {
     menu.classList.add("expanded");
   }
 }
+

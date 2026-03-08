@@ -130,47 +130,6 @@ p.project-blurb {
 }
 
 
-/* TITLE */
-/* Highlight effect courtesy of https://codepen.io/alvarotrigo/pen/popvzVw */
-.mark {
-    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
-    animation: 1.5s highlight 1.5s 1 normal forwards;
-    background-color: none;
-    background: linear-gradient(90deg, var(--highlight-color-light) 50%, rgba(255, 255, 255, 0) 50%);
-    border-radius: 20% 25% 20% 24%;
-    transform: rotate(1.5deg);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    width: 30%;
-    max-width: 10em;
-    margin: auto;
-}
-
-.mark.dark {
-    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
-    animation: 1.5s highlight 1.5s 1 normal forwards;
-    background-color: none;
-    background: linear-gradient(90deg, var(--highlight-color-dark) 50%, rgba(255, 255, 255, 0) 50%);
-    border-radius: 20% 25% 20% 24%;
-    transform: rotate(1.5deg);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    width: 30%;
-    max-width: 10em;
-    margin: auto;
-}
-
-@-webkit-keyframes highlight {
-    to {
-        background-position: 0 0;
-    }
-}
-
-@keyframes highlight {
-    to {
-        background-position: 0 0;
-    }
-}
 
 /* NAV BAR */
 

@@ -68,7 +68,7 @@ body.dark {
   margin: 2em auto;
   padding: 1.5em 0;
   text-align: center;
-  font-family: "Consolas Regular", "Courier New", monospace;
+  font-family: "Courier New", "Consolas Regular",  monospace;
   font-weight: bold;
   font-size: 1.5em;
 }
@@ -82,7 +82,7 @@ body.dark {
   margin: 2em auto;
   padding: 1.5em 0;
   text-align: center;
-  font-family: "Consolas Regular", "Courier New", monospace;
+  font-family: "Courier New", "Consolas Regular",  monospace;
   font-weight: bold;
 }
 
@@ -116,7 +116,7 @@ h4,
 h5,
 h6 {
   color: var(--secondary-color-light);
-  font-family: "Consolas Regular", "Courier New", monospace;
+  font-family: "Courier New", "Consolas Regular",  monospace;
   font-weight: bold;
 }
 
@@ -158,6 +158,18 @@ a.ext:after {
   content: ' [external]';
   font-size: xx-small;
   vertical-align: super;
+}
+
+p {
+  line-height: 1.25em;
+}
+
+p.version {
+  display: block;
+  position: relative; 
+  font-size: smaller;
+  font-style: italic;
+  color: var(--secondary-color-light);
 }
 
 p.project-blurb {
@@ -355,14 +367,14 @@ table.button-container.left {
 }
 
 /* router popup menu */
-nav.react-router-nav {
+#react-router-wrapper {
   display: none;
 }
 
-nav.react-router-nav.expanded {
+#react-router-wrapper.expanded {
   display: block;
-  position: relative;
-  bottom: 50px;
+  position: absolute;
+  bottom: 60px;
   left: 0;
   z-index: 99999;
 
@@ -371,21 +383,24 @@ nav.react-router-nav.expanded {
   padding: 1em;
   border-radius: 20% 25% 20% 24%;
   transform: rotate(1.5deg);
-
-
 }
 
-nav.react-router-nav.expanded a {
+#react-router-wrapper.expanded a {
   color: var(--content-color-light) !important;
 text-decoration: none;
 }
 
-.nav.react-router-nav.expanded.dark {
+/* overrides the :after content for these thats meant to be applied to the header nav, not sure why theyre being applied to this too */
+#react-router-wrapper.expanded a:after {
+  display:none;
+}
+
+#react-router-wrapper.expanded.dark {
   background-color: var(--secondary-color-dark) !important;
   color: var(--secondary-color-dark) !important;
 }
 
-nav.react-router-nav.expanded.dark a {
-  color: var(--content-color-light) !important;
+#react-router-wrapper.expanded.dark a {
+  color: var(--content-color-dark) !important;
   text-decoration: none;
 }

@@ -16,7 +16,7 @@ export function toggleDarkMode() {
   document.body.classList.toggle("dark"); 
 
   document.getElementById("menu")?.classList.toggle("dark");
-  document.getElementById("react-router-nav")?.getElementsByClassName("expanded")[0]?.classList.toggle("dark");
+  document.getElementById("react-router-wrapper")?.classList.toggle("dark");
 
   document.getElementById("stt")?.classList.toggle("dark");
 
@@ -111,11 +111,11 @@ export function obfuscateEmail() {
 
 /* opens the router navigation menu */
 export function expandMenu() {
-  let menu = document.getElementsByClassName("react-router-nav")[0];
-  if (menu.classList.contains("expanded")) {
+  let menu = document.getElementById("react-router-wrapper");
+  if (menu && menu.classList.contains("expanded")) {
     menu.classList.remove("expanded");
   }
-  else {
+  else if (menu) {
     menu.classList.add("expanded");
   }
 }

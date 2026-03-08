@@ -18,17 +18,14 @@ export default function Home () {
       <table className="button-container left">
         <tr><td><div id="menu" className="button" onClick={() => expandMenu()}>&equiv;</div></td></tr>
 
-        <nav className='react-router-nav'>
-                <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  {/* <li><Link to="/toolbox">Toolbox</Link></li> */}
-                  <li>
-                    <Link to="/gallery" onClick={() => forceDark()}>Gallery</Link> 
-                  </li>
-                </ul>
-              </nav>
+        <div id="react-router-wrapper">
+          <nav className='react-router-nav'>
+            <span><Link to="/">Home</Link><br /></span>
+              
+            {/* <li><Link to="/toolbox">Toolbox</Link></li> */}
+            <span><Link to="/gallery" onClick={() => forceDark()}>Gallery</Link></span>
+          </nav>
+        </div>
       </table>
 
       <div id="header">
@@ -113,9 +110,10 @@ export default function Home () {
 
         <div id="footer">
           <div id="footer-container">
-            <p>Thank you again for visiting my website! Please feel free to reach out to me via <a id="liame" href="mailto:">email</a> or <a href="www.linkedin.com/in/ally-f-360b2b175">LinkedIn</a>!</p>
+            <p>Please feel free to reach out to me via <a id="liame" href="mailto:">email</a> or <a href="www.linkedin.com/in/ally-f-360b2b175">LinkedIn</a>!</p>
             <p>You can view the repository for this website <a href="https://github.com/ally-f/ally-f.github.io">here</a>.</p>
-            <p>Made with &#9825; using React with Vite and TypeScript.<br />v2.0.0</p>
+          <p>Made with &#9825; using React with Vite and TypeScript.</p>
+          <p className='version'>v2.0.0</p>
           </div>
         </div>
     </div>

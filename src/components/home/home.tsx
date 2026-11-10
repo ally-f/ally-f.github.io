@@ -110,7 +110,7 @@ export default function Home () {
 
         <div id="footer">
           <div id="footer-container">
-            <p>Please feel free to reach out to me via <a id="liame" href="mailto:">email</a> or <a href="www.linkedin.com/in/ally-f-360b2b175">LinkedIn</a>!</p>
+            <p>Please feel free to reach out to me via <a id="liame" href="mailto:">email</a> or <a href="https://www.linkedin.com/in/ally-f-360b2b175">LinkedIn</a>!</p>
             <p>You can view the repository for this website <a href="https://github.com/ally-f/ally-f.github.io">here</a>.</p>
           <p>Made with &#9825; using React with Vite and TypeScript. <a onClick={() => alert('WIP :)')}>Learn more?</a></p>
           <p className='version'>v2.1.0</p>
